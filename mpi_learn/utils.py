@@ -61,7 +61,8 @@ def load_model(filename=None, model=None, weights_file=None, custom_objects={}):
     import_keras()
     from keras.models import model_from_json, clone_model
     if filename is not None:
-        with open( filename ) as arch_f:
+        print(filename)
+        with open( filename,  encoding = "ISO-8859-1" ) as arch_f:
             json_str = arch_f.readline()
             new_model = model_from_json( json_str, custom_objects=custom_objects) 
     if model is not None:
