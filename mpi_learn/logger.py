@@ -61,7 +61,7 @@ class MPIFileHandler(logging.FileHandler):
         try:
             msg = self.format(record)
             stream = self.stream
-            stream.Write_shared((msg+self.terminator).encode('utf-8').strip())
+            stream.Write_shared((msg+self.terminator).encode('ISO-8859-1').strip())
             #self.flush()
         except Exception:
             self.handleError(record)
